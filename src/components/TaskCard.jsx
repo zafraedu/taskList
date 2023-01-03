@@ -1,14 +1,18 @@
 import { FaTrashAlt } from "react-icons/fa";
+import { TaskContext } from "../context/TaskContex";
+import { useContext } from "react";
 
-const TaskCard = ({ task, deleteTask }) => {
+const TaskCard = ({ task }) => {
+  const { deleteTask } = useContext(TaskContext);
+
   const handleClick = () => {
     deleteTask(task.id);
   };
 
   return (
-    <div>
+    <div className="card">
       {task.title + " "}
-      <button onClick={handleClick}>
+      <button className="deleteButton" onClick={handleClick}>
         <FaTrashAlt />
       </button>
     </div>

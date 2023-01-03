@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { FaSave } from "react-icons/fa";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContex";
 
-const TaskForm = ({ createTask }) => {
+const TaskForm = () => {
   const [title, setTitle] = useState("");
+  const { createTask } = useContext(TaskContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,14 +15,17 @@ const TaskForm = ({ createTask }) => {
     setTitle(e.target.value);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
-        placeholder="Escribe tu tarea"
+        className="input"
+        placeholder="Create your task"
         onChange={handleChange}
         value={title}
         autoFocus
       />
-      <button type="submit">Guardar</button>
+      <button className="saveButton" type="submit">
+        <FaSave />
+      </button>
     </form>
   );
 };

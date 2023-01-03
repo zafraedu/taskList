@@ -5,10 +5,14 @@ export const tasks = [
   },
   {
     id: 1,
-    title: "My secont task",
+    title: "My second task",
   },
   {
     id: 2,
     title: "My third task",
+  },
+  {
+    id: 3,
+    title: "My fourth task",
   },
 ];

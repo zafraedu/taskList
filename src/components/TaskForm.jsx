@@ -21,7 +21,6 @@ const TaskForm = () => {
         placeholder="Create your task"
         onChange={handleChange}
         value={title}
-        autoFocus
       />
       <button className="saveButton" type="submit">
         <FaSave />

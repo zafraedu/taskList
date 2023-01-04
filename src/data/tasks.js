@@ -11,8 +11,4 @@ export const tasks = [
     id: 2,
     title: "My third task",
   },
-  {
-    id: 3,
-    title: "My fourth task",
-  },
 ];

@@ -16,12 +16,9 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   background-color: var(--black);
-  max-width: 100vw;
 }
 .container {
-  /* background: yellow; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +31,7 @@ body {
   justify-content: center;
   gap: 10px;
   border-radius: 0.4em;
-  background-color: #212937;
+  background-color: var(--dark-blue);
 }
 .input {
   font-size: 1.6em;
@@ -56,11 +53,11 @@ body {
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.8em;
-  width: 80vw;
-
-  /* background-color: red; */
+  max-width: 80vw;
+  min-height: 100%;
+  margin-bottom: 50px;
 }
 .card {
   position: relative;
@@ -68,6 +65,7 @@ body {
   color: var(--white);
 
   max-width: 400px;
+  min-width: 250px;
 
   padding: 1.2em 1em;
 
@@ -97,9 +95,35 @@ body {
   color: var(--gray);
   margin: 0;
 }
-footer {
-  color: var(--white);
-  position: absolute;
-  bottom: 0;
-  padding: 5px 0;
+
+@media screen and (max-width: 1200px) {
+  .form {
+    min-width: 100%;
+    font-size: 0.9em;
+  }
+  .cardContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    flex-direction: column;
+    padding: 0;
+    margin: 2em 0 3em 0;
+  }
+  .input {
+    font-size: 1.2em;
+    padding: 0.6em;
+  }
+  .saveButton {
+    padding: 0.2em 0;
+  }
+  .cardContainer {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    min-width: 80vw;
+    font-size: 1.3em;
+  }
 }
